@@ -1,17 +1,19 @@
 import { Container } from "react-bootstrap"
 import Menu from "./component/navbar"
 import Footer from "./component/footer"
+import { useState } from "react";
 
-export default function Promessa)(){
-    var prometido=""
+export default function Promessa(){
+    const [prometido, setPrometido] = useState("")
     setTimeout(() => {
-        prometido= "é dívida"
+        setPrometido("é uma dívida")
         document.title="Promessa é dívida";
     }, 2000); 
     return <>
     <Menu/>
     <Container>
-        Promessa {prometido}
+        Promessa {prometido==="" ? <img src="./loading-gif.gif" width={80} height={80}></img>:prometido}
     </Container>
     <Footer/>
+    </>
 }
